@@ -43,4 +43,31 @@ Deployed on Render.
 
 ---
 
+## 🌐 Live Website
+
+The project is deployed on Render:
+
+🔗 https://exam-management-system-1-tcvb.onrender.com
+
+---
+
+## ✨ Features
+
+- 🔐 User Login System  
+- 👨‍🎓 Add & View Students  
+- 📊 Dashboard with Student Count  
+- 📁 Export Students Data to CSV  
+- 🗄️ SQLite Database Integration  
+
+---
+
+## 🛠️ Technologies Used
+
+- Python (Flask)
+- SQLite
+- HTML/CSS
+- Pandas
+- Render (Deployment)
+---
+
 👩‍💻 Developed by Jannat Shaikh
