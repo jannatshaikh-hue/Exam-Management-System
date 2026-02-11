@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, redirect, session, send_file
 import sqlite3
 import pandas as pd
@@ -7,7 +6,7 @@ import os
 app = Flask(__name__)
 app.secret_key = "secret123"
 
-DATABASE = "exam-management-system/database.db"
+DATABASE = "database.db"
 
 # ---------------- DATABASE INIT ----------------
 def init_db():
@@ -95,10 +94,12 @@ def students():
 def export_students():
     conn = sqlite3.connect(DATABASE)
     df = pd.read_sql_query("SELECT * FROM students", conn)
-    file_path = "exam-management-system/exports/students.csv"
+    file_path = "students.csv"
     df.to_csv(file_path, index=False)
     conn.close()
-    return send_file(file_path, as_attachment=True)
+    return send_file(file_path, as_attachment=True)                        
 
+# ---------------- RUN ----------------
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)        
