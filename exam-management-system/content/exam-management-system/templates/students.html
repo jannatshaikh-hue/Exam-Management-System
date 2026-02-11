@@ -1,0 +1,30 @@
+
+<h2>Add Student</h2>
+<form method="POST">
+Name:<input name="name"><br>
+Roll:<input name="roll"><br>
+Year:<input name="year"><br>
+Division:<input name="division"><br>
+Department:<input name="department"><br>
+<button type="submit">Add</button>
+</form>
+
+<h3>Student List</h3>
+<table border="1">
+<tr>
+<th>Name</th><th>Roll</th><th>Year</th><th>Division</th><th>Dept</th>
+</tr>
+
+{% for s in students %}
+<tr>
+<td>{{ s[1] }}</td>
+<td>{{ s[2] }}</td>
+<td>{{ s[3] }}</td>
+<td>{{ s[4] }}</td>
+<td>{{ s[5] }}</td>
+</tr>
+{% endfor %}
+</table>
+
+<br>
+<a href="/export_students">Export CSV</a>
